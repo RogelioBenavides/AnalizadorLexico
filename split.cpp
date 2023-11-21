@@ -30,14 +30,16 @@ vector<pair<string, string>> split(string s, string separator)
         if (s[i] != separator[0])
         {
             token += s[i];
-            string letter = "";
-            letter += s[i];
-            state = states[1];
-            cout << token << " " << state << endl;
-            cout << letter << endl;
-            if(symbols.find(letter) != symbols.end()){
-                state = states[3];
+            if(state != states[3]){
+                string letter = "";
+                letter += s[i];
+                state = states[1];
                 cout << token << " " << state << endl;
+                cout << letter << endl;
+                if(symbols.find(letter) != symbols.end()){
+                    state = states[3];
+                    cout << token << " " << state << endl;
+                }
             }
         }
         else
@@ -49,6 +51,7 @@ vector<pair<string, string>> split(string s, string separator)
             cout << token << " " << state << endl;
             result.push_back(make_pair(token, transitions[state]));
             token = "";
+            state = states[0];
         }
     }
     if (keywords.find(token) != keywords.end())
@@ -63,7 +66,7 @@ vector<pair<string, string>> split(string s, string separator)
 
 int main(int argc, char const *argv[])
 {
-    string s = "Hello! int";
+    string s = "Hello!Marce int";
     vector<pair<string, string>> result = split(s, " ");
     for (int i = 0; i < result.size(); i++)
     {
