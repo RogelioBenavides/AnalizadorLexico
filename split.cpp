@@ -14,6 +14,7 @@ vector<pair<string, string>> split(string s, string separator)
 
     vector<string> states = {"INITIAL", "Q1", "Q2", "DEATH_STATE"};
     set<string> keywords = {"int", "bool", "double", "long", "string", "char"};
+    set<string> symbols = {"+", "-", "*", "/", "=", "(", ")", "{", "}", ";", ":", ",", "<", ">", "!", "&", "|", "[", "]", "%"};
     string state = states[0];
     map<string, string> transitions = {
         {"INITIAL", ""},
@@ -29,8 +30,15 @@ vector<pair<string, string>> split(string s, string separator)
         if (s[i] != separator[0])
         {
             token += s[i];
+            string letter = "";
+            letter += s[i];
             state = states[1];
             cout << token << " " << state << endl;
+            cout << letter << endl;
+            if(symbols.find(letter) != symbols.end()){
+                state = states[3];
+                cout << token << " " << state << endl;
+            }
         }
         else
         {
@@ -51,7 +59,7 @@ vector<pair<string, string>> split(string s, string separator)
 
 int main(int argc, char const *argv[])
 {
-    string s = "int Hello";
+    string s = "int Hello!";
     vector<pair<string, string>> result = split(s, " ");
     for (int i = 0; i < result.size(); i++)
     {
