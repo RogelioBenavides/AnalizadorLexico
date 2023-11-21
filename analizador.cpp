@@ -102,5 +102,7 @@ int main(int argc, char const *argv[])
         }
         cout << endl;
     }
+    // Want to close the program until the user press enter
+    cin.get();
     return 0;
 }
