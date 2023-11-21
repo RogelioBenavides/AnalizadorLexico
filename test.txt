@@ -1,4 +1,7 @@
-Hola
-Rogelio&Marcela
 Rogelio int
 Marcela double
+Rogelio;Marcela
+int double
+1Rogelio
+2Marcela
+3Rogelio;Marcela
