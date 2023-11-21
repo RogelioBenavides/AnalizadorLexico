@@ -1,0 +1,4 @@
+Hola
+Rogelio&Marcela
+Rogelio int
+Marcela double
