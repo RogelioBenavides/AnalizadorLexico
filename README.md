@@ -66,7 +66,7 @@ type test.txt | AnalizadorLexico.exe
 ### MacOS y Linux
 En la Terminal de MacOS o Linux, después de compilar el programa, ejecuta:
 ```bash
-cat test.txt | ./AnalizadorLexico
+./analizador < test.txt 
 ```
 
 ## Abrir el archivo ejecutable
